@@ -231,19 +231,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdLlenadoAutomaticoActionPerformed
 
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
-        int nf, nc;
-        nf = tblMatrizInicial.getRowCount();
-        nc = tblMatrizInicial.getColumnCount();
+        
 
-        for (int i = 0; i < nf; i++) {
-            for (int j = 0; j < nc; j++) {
-
-                tblMatrizInicial.setValueAt("", i, j);
-                tblMatrizResultante.setValueAt("", i, j);
-            }
-
-        }
-
+        Helper.limpiarTabla(tblMatrizInicial, tblMatrizResultante);
+        
         txtNumeroFilas.setText("");
         txtNumeroColumnas.setText("");
         txtNumeroFilas.requestFocusInWindow();
@@ -415,10 +406,13 @@ public class Principal extends javax.swing.JFrame {
                             j = nc;
                             i = nf;
                             sw = false;
-                            JButton botonesH[] = {cmdLlenadoAutomatico, cmdLimpiar, cmdLlenadoManual};
-                            JButton botonesD[] = {cmdOperaciones, cmdCrear};
+                            JButton botonesH[] = {cmdCrear, cmdLimpiar};
+                            JButton botonesD[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdOperaciones};
                             Helper.deshabilitarBotones(botonesD);
                             Helper.habilitarBotones(botonesH);
+                            Helper.tablaPorDefecto(tblMatrizInicial);
+                            Helper.tablaPorDefecto(tblMatrizResultante);
+                            Helper.limpiarTabla(tblMatrizInicial, tblMatrizResultante);
                         } else {
                             aux = 0;
                             JButton botonesH[] = {cmdOperaciones, cmdLimpiar};

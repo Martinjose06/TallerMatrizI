@@ -353,5 +353,19 @@ public class Helper {
 
         }
     }
+    
+    public static void limpiarTabla(JTable tabla1, JTable tabla2){
+        int nf, nc, aux;
+        nf = tabla1.getRowCount();
+        nc = tabla1.getColumnCount();
+        for (int i = 0; i < nf; i++) {
+            for (int j = 0; j < nc; j++) {
+
+                tabla1.setValueAt("", i, j);
+                tabla2.setValueAt("", i, j);
+            }
+
+        }
+    }
 
 }
