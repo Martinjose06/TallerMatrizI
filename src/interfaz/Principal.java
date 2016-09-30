@@ -415,8 +415,16 @@ public class Principal extends javax.swing.JFrame {
                             j = nc;
                             i = nf;
                             sw = false;
+                            JButton botonesH[] = {cmdLlenadoAutomatico, cmdLimpiar, cmdLlenadoManual};
+                            JButton botonesD[] = {cmdOperaciones, cmdCrear};
+                            Helper.deshabilitarBotones(botonesD);
+                            Helper.habilitarBotones(botonesH);
                         } else {
                             aux = 0;
+                            JButton botonesH[] = {cmdOperaciones, cmdLimpiar};
+                            JButton botonesD[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdCrear};
+                            Helper.deshabilitarBotones(botonesD);
+                            Helper.habilitarBotones(botonesH);
                         }
 
                     }
@@ -424,10 +432,7 @@ public class Principal extends javax.swing.JFrame {
             }
         }
 
-        JButton botonesH[] = {cmdOperaciones, cmdLimpiar};
-        JButton botonesD[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdCrear};
-        Helper.deshabilitarBotones(botonesD);
-        Helper.habilitarBotones(botonesH);
+
     }//GEN-LAST:event_cmdLlenadoManualActionPerformed
 
     private void txtNumeroFilasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroFilasKeyTyped
