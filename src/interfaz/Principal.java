@@ -200,6 +200,8 @@ public class Principal extends javax.swing.JFrame {
                 tm2.setColumnCount(nc);
                 JButton botonesH[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdLimpiar};
                 JButton botonesD[] = {cmdOperaciones, cmdCrear};
+                txtNumeroColumnas.setEditable(false);
+                txtNumeroFilas.setEditable(false);
                 Helper.deshabilitarBotones(botonesD);
                 Helper.habilitarBotones(botonesH);
             }
@@ -248,6 +250,8 @@ public class Principal extends javax.swing.JFrame {
         cmbOperaciones.setSelectedIndex(0);
         JButton botonesH[] = {cmdCrear, cmdLimpiar};
         JButton botonesD[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdOperaciones};
+        txtNumeroColumnas.setEditable(true);
+        txtNumeroFilas.setEditable(true);
         Helper.deshabilitarBotones(botonesD);
         Helper.habilitarBotones(botonesH);
     }//GEN-LAST:event_cmdLimpiarActionPerformed
@@ -280,14 +284,14 @@ public class Principal extends javax.swing.JFrame {
                 if (nc != nf) {
                     Helper.mensaje(this, "El numero de filas y columnas debe ser iguales", "Error", 2);
                 } else {
-                Helper.triangularSuperior(tblMatrizInicial, tblMatrizResultante);
+                    Helper.triangularSuperior(tblMatrizInicial, tblMatrizResultante);
                 }
                 break;
             case 2:
                 if (nc != nf) {
                     Helper.mensaje(this, "El numero de filas y columnas debe ser iguales", "Error", 2);
                 } else {
-                Helper.triangularInferior(tblMatrizInicial, tblMatrizResultante);
+                    Helper.triangularInferior(tblMatrizInicial, tblMatrizResultante);
                 }
                 break;
 
@@ -343,9 +347,8 @@ public class Principal extends javax.swing.JFrame {
                 }
                 break;
             case 11:
-                
-                    Helper.letraP(tblMatrizInicial, tblMatrizResultante);
-                
+
+                Helper.letraP(tblMatrizInicial, tblMatrizResultante);
 
                 break;
             case 12:
@@ -362,11 +365,9 @@ public class Principal extends javax.swing.JFrame {
                     Helper.mensaje(this, "El numero de columnas y filas no puede ser menor que 9", "Error", 2);
                 } else if (nc < 9 || nf < 9) {
                     Helper.mensaje(this, "El numero de columnas y filas no puede ser menor que 9", "Error", 2);
-                } 
-                else if (nc != nf ) {
+                } else if (nc != nf) {
                     Helper.mensaje(this, "El numero de filas y columnas debe ser iguales", "Error", 2);
-                }
-                else {
+                } else {
                     Helper.letraA(tblMatrizInicial, tblMatrizResultante);
                 }
                 break;
